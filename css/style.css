@@ -1,0 +1,2350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Montserat 
+font-family: 'Montserrat', sans-serif;
+*/
+
+html {
+    /* variables */
+
+    --mainlyColor: #1c252c;
+    --navColor: #2C3E50;
+}
+
+nav {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    width: 100%;
+    background-color: var(--navColor);
+    z-index: 2;
+    overflow: hidden;
+    transition: .3s;
+}
+
+
+nav.active {
+    height: 45vh;
+}
+
+nav div.logo {
+
+    height: 60px;
+    width: 100px;
+    margin-right: 50%;
+    line-height: 10vh;
+    text-align: center;
+    letter-spacing: 2px;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+}
+
+nav div.burger {
+
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 40px;
+    height: 20px;
+    margin-top: calc(5vh - 10px);
+
+
+}
+
+div.burger span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    transition: .3s;
+}
+
+div.burger span:nth-of-type(1) {
+    top: 0;
+
+}
+
+div.burger span:nth-of-type(2) {
+    top: calc(50% - 1px);
+}
+
+
+div.burger span:nth-of-type(3) {
+    top: calc(100% - 2px);
+}
+
+.active .burger span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+.active .burger span:nth-child(2) {
+    top: 50%;
+    transform: rotate(-45deg);
+
+}
+
+.active .burger span:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 5vh;
+    list-style: none;
+    margin: 25px auto;
+    /* border: 3px solid white; */
+
+}
+
+nav li {
+
+    flex-basis: 100%;
+    text-align: left;
+    transition: .3s;
+
+}
+
+nav a {
+
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 30px;
+    letter-spacing: 5px;
+    cursor: pointer;
+
+}
+
+nav a.activeHover {
+
+    background-color: #fff;
+    color: var(--mainlyColor);
+}
+
+
+@media (min-width: 568px) and (orientation:landscape) {
+
+    nav {
+        height: 17vh;
+    }
+
+    nav.active {
+        height: 100vh;
+    }
+
+    nav div.logo {
+        line-height: 17vh;
+
+    }
+
+    nav div.burger {
+        margin-top: calc(8.5vh - 10px);
+    }
+
+
+    nav ul {
+        line-height: 12vh;
+        margin-top: 30px
+    }
+
+}
+
+
+@media (min-width: 768px) and (orientation: portrait) {
+
+    nav ul {
+        line-height: 6vh;
+        margin-top: 40px;
+    }
+}
+
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--mainlyColor);
+    overflow: hidden;
+
+}
+
+header i {
+    color: white;
+}
+
+header i.fa-comment-dots {
+    position: absolute;
+    top: 42%;
+    left: 80%;
+    font-size: 30px;
+    animation: 2 flashComment linear 5s .8s both;
+
+}
+
+@keyframes flashComment {
+
+    0% {
+        color: var(--mainlyColor);
+    }
+
+    12.5% {
+        color: white;
+    }
+
+    25% {
+        color: white;
+    }
+
+    37.5% {
+        color: var(--mainlyColor)
+    }
+
+    50% {
+        color: white;
+    }
+
+    62.5% {
+        color: var(--mainlyColor);
+    }
+
+    75% {
+        color: white;
+    }
+
+    87.5% {
+        color: var(--mainlyColor)
+    }
+
+    100% {
+        color: white;
+    }
+}
+
+
+header img {
+    position: absolute;
+    left: -5%;
+    bottom: -17%;
+    height: 80%;
+}
+
+
+header div.welcomeMessage {
+
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 65%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    line-height: 6vh;
+    overflow: hidden;
+
+}
+
+header div.welcomeMessage span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+
+}
+
+@media (min-width:360px) {
+    header img {
+        height: 80%;
+        bottom: -15%;
+    }
+
+    header div.welcomeMessage {
+        width: 60%;
+    }
+}
+
+@media (min-width:375px) {
+    header img {
+        height: 70%;
+        left: 0;
+        bottom: -15%;
+    }
+
+    header div.welcomeMessage {
+        width: 55%;
+    }
+}
+
+/* Iphone X, Pixel 2 XL */
+
+@media(min-width:375px) and (min-height:800px) and (max-height:850px) {
+    header img {
+        left: -10%;
+    }
+}
+
+@media (min-width:411px) {
+    header img {
+
+        bottom: -15%;
+    }
+
+    header div.welcomeMessage {
+        width: 50%;
+    }
+}
+
+@media (min-width:534px) {
+    header img {
+        height: 80%;
+        bottom: -15%;
+    }
+
+    header div.welcomeMessage {
+        width: 40%;
+    }
+}
+
+
+@media (min-width:568px) and (orientation:landscape) {
+    header img {
+        height: 100%;
+        bottom: -20%;
+    }
+
+    header i.fa-comment-dots {
+        left: 35%;
+    }
+
+    header div.welcomeMessage {
+        left: 85%;
+        top: 25%;
+        width: 36%;
+        transform: translateX(-85%);
+        line-height: 12vh;
+    }
+
+}
+
+@media (min-width:640px) and (orientation:landscape) {
+
+    header div.welcomeMessage {
+        width: 32%;
+
+    }
+
+}
+
+@media (min-width:731px) and (orientation:landscape) {
+
+    header div.welcomeMessage {
+        width: 28%;
+
+    }
+
+}
+
+@media (min-width:768px) {
+
+    header div.welcomeMessage {
+        width: 28%;
+    }
+}
+
+/* Iphone X, Pixel 2 XL */
+
+@media (min-width:812px) and (max-height:450px) {
+
+    header i.fa-comment-dots {
+        left: 30%;
+    }
+
+    header div.welcomeMessage {
+        width: 25%;
+
+    }
+
+}
+
+/* MediaPad T3 8 */
+
+@media (min-width:800px) and (min-height:500px) {
+    header i.fa-comment-dots {
+        left: 42%;
+    }
+
+    header div.welcomeMessage {
+        left: 80%;
+        width: 25%;
+
+    }
+
+}
+
+/* Lenovo mi Mix 2 */
+
+@media (min-width:800px) and (min-height:1200px) and (max-height:1280px) {
+
+
+    header i.fa-comment-dots {
+        left: 80%;
+    }
+
+    header div.welcomeMessage {
+        left: 50%;
+        width: 27%;
+
+    }
+}
+
+main {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 810vh;
+    overflow: hidden;
+
+}
+
+div.title {
+    position: absolute;
+    height: 20vh;
+    width: 80%;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+div.title h2 {
+
+    color: var(--mainlyColor);
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'Montserrat';
+}
+
+div.title i {
+
+    font-size: 50px;
+    color: var(--mainlyColor);
+}
+
+div.title span.spnLineLeft,
+div.title span.spnLineRight {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-150%);
+    height: 5px;
+    width: 80px;
+    background-color: var(--mainlyColor);
+
+}
+
+div.title span.spnLineRight {
+
+    transform: translateX(50%);
+}
+
+@media (min-width:375px) {
+    main {
+        height: 780vh;
+    }
+}
+
+@media (min-width:375px) and (min-height: 760px) {
+    main {
+        height: 715vh;
+    }
+}
+
+
+@media (min-width:568px) and (orientation:landscape) {
+
+    main {
+        height: 920vh;
+    }
+
+    div.title {
+        top: 2%;
+        height: 25vh;
+    }
+
+    div.title h2 {
+        font-size: 25px;
+    }
+
+    div.title i {
+        font-size: 40px;
+    }
+
+    div.title span.spnLineLeft,
+    div.title span.spnLineRight {
+        top: 50px;
+    }
+
+}
+
+
+.myWorks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 280vh;
+    width: 100%;
+    background-color: #F8F9FA;
+    overflow: hidden;
+
+}
+
+.myWorks div.projects {
+    position: relative;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 250vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    padding: 20px 0;
+    overflow: hidden;
+
+
+}
+
+div.projects div.project {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 90%;
+    height: 75vh;
+    border: 2px solid var(--mainlyColor);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+div.projects div.project:hover i {
+
+    font-size: 50px;
+}
+
+
+.project div.screenViews {
+    position: relative;
+    top: 0;
+    left: 0;
+    flex-basis: 100%;
+    height: 85%;
+    background-color: var(--mainlyColor);
+    overflow: hidden;
+
+}
+
+.screenViews img.desktop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    filter: blur(2px);
+}
+
+.screenViews img.tablet {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    transform: translateX(-50%);
+    height: 40%;
+    filter: blur(1px);
+}
+
+.screenViews img.phone {
+    position: absolute;
+    top: 45%;
+    left: 60%;
+    transform: translateX(-50%);
+    height: 30%;
+}
+
+
+.project button {
+    text-align: center;
+    height: 15%;
+    flex-basis: 100%;
+    font-size: 18px;
+    font-family: 'Monserrat', arial, sans-serif;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    border: none;
+    color: white;
+    background-color: var(--mainlyColor);
+}
+
+div.project div.hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: .3s;
+}
+
+div.project div.hover:hover {
+    background-color: rgba(28, 37, 44, 0.2);
+}
+
+
+.project i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #F8F9FA;
+    font-size: 0;
+    transition: .3s;
+}
+
+
+@media (min-width:568px) and (orientation:landscape) {
+
+
+    .myWorks div.projects {
+        top: 10%;
+        padding: 0 0;
+    }
+
+    div.projects div.project {
+        flex-basis: 70%;
+    }
+
+    .screenViews img.tablet {
+        left: 50%;
+    }
+
+    .screenViews img.phone {
+        left: 55%;
+    }
+
+}
+
+section.showWorks {
+    display: none;
+}
+
+.showWorks.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.showWorks.active .showProject {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F8F9FA;
+
+}
+
+.showProject div.exit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--mainlyColor);
+    border-radius: 50%;
+
+}
+
+.showProject i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 25px;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+
+.showProject .devices {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background-color: #fff;
+    overflow: hidden;
+
+}
+
+.devices img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.devices img.imac {
+    height: 90%;
+    top: 0;
+}
+
+.devices img.ipad {
+    top: 42%;
+    left: 20%;
+    height: 40%;
+}
+
+
+.devices img.iphone {
+    top: 52%;
+    height: 30%;
+    left: 30%;
+
+}
+
+.showProject .text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    background-color: #fff;
+    font-family: 'Montserrat', arial, sans-serif;
+    color: var(--mainlyColor);
+
+}
+
+.text p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.text p a {
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.text p span {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.text p.description {
+    padding: 10px;
+    font-weight: 300;
+}
+
+@media (min-width:568px) and (orientation:landscape) {
+
+    .showProject .devices {
+
+        top: 20%;
+        width: 50%;
+        height: 80%;
+    }
+
+    .showProject .text {
+        top: 20%;
+        left: 50%;
+        width: 50%;
+        height: 80%;
+        padding: 15px;
+    }
+
+}
+
+@media (min-width:768px) and (orientation:portrait) {
+    .text p {
+
+        font-size: 24px;
+    }
+
+    .text p span {
+        font-size: 24px;
+
+    }
+}
+
+
+section.skills {
+    position: absolute;
+    left: 0;
+    top: 280vh;
+    height: 280vh;
+    width: 100%;
+    text-align: center;
+
+}
+
+/* Tablet, iphone X */
+
+@media (min-height: 800px) and (orientation: portrait) {
+    .myWorks {
+        height: 225vh;
+    }
+
+    .myWorks div.projects {
+        top: 8%;
+        height: 200vh;
+    }
+
+    div.projects div.project {
+        height: 60vh;
+    }
+
+    section.skills {
+        top: 225vh;
+    }
+
+}
+
+@media (min-height: 800px) and (min-width: 500px) {
+    .screenViews img.tablet {
+        left: 50%;
+    }
+
+    .screenViews img.phone {
+        left: 60%;
+    }
+}
+
+
+.skills div.elements {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    top: 12%;
+    left: 0;
+    width: 100%;
+    height: 245vh;
+
+}
+
+div.element {
+
+    flex-basis: 70%;
+    height: 75vh;
+    box-shadow: 0 0 8px 2px lightgray;
+    font-family: 'Montserrat', arial, sans-serif;
+
+
+}
+
+div.elementName,
+div.elementTechnologies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    color: var(--mainlyColor);
+}
+
+div.elementName {
+    height: 30%;
+}
+
+div.elementName i {
+    flex-basis: 100%;
+    font-size: 80px;
+}
+
+div.elementName span {
+    font-size: 20px;
+    font-weight: 400;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+div.elementDescription {
+    height: 60%;
+    padding: 20px;
+    overflow: hidden;
+}
+
+div.elementTechnologies {
+    border-top: 1px solid var(--mainlyColor);
+    height: 10%;
+}
+
+div.elementTechnologies span {
+    flex-basis: 40%;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+@media (min-width:568px) and (orientation:landscape) {
+
+    div.element {
+        flex-basis: 80%;
+    }
+
+    div.elementName i {
+        font-size: 50px;
+    }
+
+    div.elementDescription {
+        font-size: 14px;
+    }
+
+
+}
+
+@media (min-width:800px) and (orientation:landscape) {
+
+    div.elementName i {
+        font-size: 70px;
+    }
+
+    div.elementDescription {
+        font-size: 20px;
+    }
+
+}
+
+@media (min-height:800px) and (min-width: 500px) and (orientation:portrait) {
+
+    .skills div.elements {
+        top: 8%;
+    }
+
+    div.elementDescription {
+        font-size: 22px;
+    }
+}
+
+@media (min-height:1024px) and (orientation: portrait) {
+
+    div.elementName i {
+        font-size: 100px;
+    }
+
+    div.elementName span {
+        font-size: 40px;
+    }
+
+    div.elementDescription {
+        font-size: 25px;
+    }
+
+    div.elementTechnologies {
+        font-size: 22px;
+    }
+
+}
+
+section.experience {
+    position: absolute;
+    left: 0;
+    top: 560vh;
+    height: 220vh;
+    width: 100%;
+    background-color: #F8F9FA;
+    overflow: hidden;
+}
+
+div.companies {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    height: 170vh;
+    overflow: hidden;
+
+}
+
+.companies span.spanLine {
+    position: absolute;
+    top: 30vw;
+    left: calc(2.5% + 15vw - 1px);
+    width: 2px;
+    height: 100vh;
+
+    background-color: var(--mainlyColor);
+}
+
+div.company {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    width: 100%;
+    background-color: #F8F9FA;
+
+}
+
+div.bks {
+    top: 0;
+}
+
+div.perceptus {
+    top: 55vh;
+}
+
+div.seven {
+    top: 110vh;
+}
+
+div.company .companyLogo {
+    position: relative;
+    top: 0;
+    left: 0;
+    flex-basis: 35%;
+    height: 100%;
+}
+
+.companyLogo .circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30vw;
+    height: 30vw;
+    border: 5px solid var(--mainlyColor);
+    border-radius: 50%;
+    background-color: #F8F9FA;
+    z-index: 1;
+
+
+}
+
+.circle i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: var(--mainlyColor);
+}
+
+.company .text {
+    flex-basis: 62.5%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif, arial;
+    text-align: center;
+}
+
+.text h1 {
+    font-size: 15px;
+
+}
+
+.text h2 {
+    font-size: 12px;
+
+
+}
+
+.text .date {
+    display: block;
+    margin: 10px 0;
+
+}
+
+
+@media (min-width: 375px) {
+    section.experience {
+        height: 190vh;
+    }
+
+    div.companies {
+        height: 152vh;
+    }
+}
+
+@media (min-width:568px) and (orientation: landscape) {
+
+    section.experience {
+        height: 300vh;
+    }
+
+    div.companies {
+        height: 240vh;
+    }
+
+    .companies span.spanLine {
+        top: 20vw;
+        height: 120vh;
+
+    }
+
+    .companyLogo .circle {
+        height: 20vw;
+        width: 20vw;
+    }
+
+    div.perceptus {
+        top: 75vh;
+    }
+
+    div.seven {
+        top: 150vh;
+    }
+
+}
+
+@media (min-height: 800px) and (orientation: portrait) {
+    section.experience {
+        top: 505vh;
+        height: 180vh;
+    }
+}
+
+@media (min-height:1024px) and (orientation: portrait) {
+
+
+    .circle i {
+
+        font-size: 70px;
+
+    }
+
+    .text h1 {
+        font-size: 35px;
+
+    }
+
+    .text h2 {
+        font-size: 25px;
+
+
+    }
+
+    .text .date {
+        font-size: 20px;
+
+
+    }
+
+    .text span {
+        font-size: 20px;
+    }
+}
+
+section.socials {
+    position: absolute;
+    top: 780vh;
+    left: 0;
+    height: 30vh;
+    width: 100%;
+    text-align: center;
+    background-color: var(--navColor);
+}
+
+section.socials span {
+    display: block;
+    margin-top: 15px;
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Montserrat', arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+.socials div.clickIcon {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+
+}
+
+.socials i {
+
+    margin-right: 20px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.socials a {
+    text-decoration: none;
+    color: white;
+}
+
+@media (min-width: 375px) {
+    section.socials {
+        top: 750vh;
+    }
+}
+
+@media (min-width:375px) and (min-height: 760px) {
+    section.socials {
+        top: 685vh;
+    }
+}
+
+@media (min-width:568px) and (orientation:landscape) {
+    section.socials {
+        height: 60vh;
+        top: 860vh;
+    }
+
+    section.socials span {
+        margin-top: 20px;
+        font-size: 30px;
+        letter-spacing: 5px;
+    }
+
+    .socials i {
+
+        margin-right: 40px;
+        font-size: 60px;
+    }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+
+    section.socials span {
+        margin-top: 30px;
+        font-size: 40px;
+        letter-spacing: 5px;
+    }
+
+    .socials i {
+
+        margin-right: 40px;
+        font-size: 80px;
+    }
+
+
+}
+
+
+footer {
+
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+
+}
+
+
+
+div.copyright {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 10vh;
+    width: 100%;
+    color: white;
+    background-color: #233140;
+    line-height: 5vh;
+    font-family: 'Montserrat', arial, sans-serif;
+    letter-spacing: 3px;
+}
+
+.copyright span {
+    line-height: 10vh;
+}
+
+
+@media (min-width:568px) and (orientation: landscape) {
+
+
+    div.socials {
+        height: 45vh;
+    }
+
+}
+
+@media (min-width:768px) and (orientation:portrait) {
+
+    div.socials span {
+        margin-top: 25px;
+        font-size: 35px;
+    }
+
+    div.socials i {
+        font-size: 70px;
+        margin-right: 40px;
+    }
+
+}
+
+/* iPads, Laptops, Desktops */
+
+
+@media (min-width:1024px) {
+
+    nav {
+        display: flex;
+        height: 10vh;
+    }
+
+    nav div.logo {
+        height: 10vh;
+        flex-basis: 20%;
+        line-height: 10vh;
+        margin-right: 10%;
+    }
+
+    nav div.burger {
+        display: none;
+    }
+
+    nav ul {
+        flex-wrap: nowrap;
+        line-height: 10vh;
+        flex-basis: 70%;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    nav li {
+
+        text-align: center;
+        transition: .3s;
+    }
+
+
+
+    nav a {
+        margin-left: 0;
+        font-size: 13px;
+        padding: 8px;
+        transition: .3s;
+    }
+
+    nav a:hover {
+        color: var(--navColor);
+        background-color: #fff;
+    }
+
+
+    header div.welcomeMessage {
+        width: 30%;
+        font-size: 30px;
+    }
+
+
+    header div.welcomeMessage {
+        width: 30%;
+        font-size: 30px;
+    }
+
+    main {
+        height: 300vh;
+    }
+
+    div.title {
+        top: 5%;
+        height: 11vh;
+    }
+
+    div.title h2 {
+        font-size: 35px;
+    }
+
+    div.title i {
+
+        font-size: 65px;
+    }
+
+    div.title span.spnLineLeft,
+    div.title span.spnLineRight {
+        position: absolute;
+        top: 75px;
+        width: 100px;
+
+
+    }
+
+    section.myWorks {
+
+        height: 70vh;
+        width: 100%;
+    }
+
+
+    .myWorks div.projects {
+        top: 25%;
+        width: 90%;
+        margin: 0 auto;
+        height: 50vh;
+        justify-content: space-between;
+
+    }
+
+    div.projects div.project {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 30%;
+        height: 35vh;
+        overflow: hidden;
+    }
+
+    .showWorks.active {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .showWorks.active .showProject {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -70%);
+        width: 90%;
+        height: 80%;
+
+    }
+
+    .showProject div.exit {
+        cursor: pointer;
+    }
+
+    .showProject .devices {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        width: 45%;
+        height: 80%;
+    }
+
+    .showProject .text {
+        top: 10%;
+        left: 50%;
+        width: 45%;
+        height: 80%;
+    }
+
+    .text p {
+        font-size: 25px;
+    }
+
+
+    .text p span {
+        font-size: 25px;
+    }
+
+
+
+    section.skills {
+        top: 70vh;
+        height: 70vh;
+    }
+
+    .skills div.elements {
+        width: 90%;
+        margin: 0 auto;
+        top: 25%;
+        height: 50vh;
+        justify-content: space-between;
+    }
+
+
+    div.element {
+        flex-basis: 30%;
+        height: 50vh;
+    }
+
+    div.elementName i {
+        font-size: 70px;
+    }
+
+    div.elementName span {
+        font-size: 30px;
+    }
+
+    div.elementDescription {
+        font-size: 18px;
+    }
+
+    div.elementTechnologies {
+        font-size: 14px;
+    }
+
+
+    section.experience {
+        top: 140vh;
+        height: 130vh;
+    }
+
+    div.companies {
+        top: 20%;
+        height: 100vh;
+    }
+
+    .companies span.spanLine {
+        top: 10vw;
+        height: 55vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    div.company {
+        display: block;
+        height: 30vh;
+    }
+
+    div.bks {
+        top: 0;
+    }
+
+    div.perceptus {
+        top: 30vh;
+    }
+
+    div.seven {
+        top: 60vh;
+    }
+
+
+    .companyLogo .circle {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .circle i {
+        font-size: 50px;
+    }
+
+    .company .text {
+        position: absolute;
+        top: 0;
+        left: 10%;
+        width: 30%;
+    }
+
+    .text h1 {
+        font-size: 25px;
+    }
+
+    .text h2 {
+        font-size: 18px;
+    }
+
+    .text.right {
+        left: 60%;
+    }
+
+    .text .date,
+    .text span {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    section.socials {
+
+        top: 270vh;
+        height: 30vh;
+
+    }
+}
+
+/* iPad landscape */
+
+@media (min-width:1024px) and (max-height:850px) {
+
+    main {
+
+        height: 320vh;
+    }
+
+    header img {
+        left: 0;
+    }
+
+    header i.fa-comment-dots {
+
+        top: 35%;
+        left: 45%;
+    }
+
+    header div.welcomeMessage {
+        left: 85%;
+        width: 30%;
+        font-size: 28px;
+    }
+
+    div.title {
+        top: 5%;
+        height: 15vh;
+    }
+
+    div.title h2 {
+        font-size: 35px;
+    }
+
+    div.title i {
+
+        font-size: 65px;
+    }
+
+    div.title span.spnLineLeft,
+    div.title span.spnLineRight {
+        position: absolute;
+        top: 75px;
+        width: 100px;
+
+    }
+
+    section.myWorks {
+
+        height: 80vh;
+        width: 100%;
+
+    }
+
+
+    .myWorks div.projects {
+        top: 30%;
+        width: 90%;
+        margin: 0 auto;
+        height: 50vh;
+        justify-content: space-between;
+
+    }
+
+    div.projects div.project {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 30%;
+        height: 40vh;
+        overflow: hidden;
+    }
+
+    .devices img.imac {
+        height: 70%;
+
+    }
+
+    .showProject .text {
+
+        padding: 20px;
+    }
+
+    .text p {
+        font-size: 18px;
+    }
+
+    .text p span {
+        font-size: 18px;
+    }
+
+    section.skills {
+        top: 80vh;
+        height: 80vh;
+
+    }
+
+    .skills div.elements {
+
+        width: 90%;
+        margin: 0 auto;
+        top: 27%;
+        height: 55vh;
+        justify-content: space-between;
+    }
+
+
+    div.element {
+        flex-basis: 30%;
+        height: 50vh;
+    }
+
+    div.elementName i {
+        font-size: 70px;
+    }
+
+    div.elementName span {
+        font-size: 30px;
+    }
+
+    div.elementDescription {
+        font-size: 16px;
+    }
+
+    div.elementTechnologies {
+        font-size: 14px;
+    }
+
+
+    section.experience {
+        top: 160vh;
+        height: 130vh;
+    }
+
+    div.companies {
+        top: 20%;
+        height: 100vh;
+    }
+
+    .companies span.spanLine {
+        top: 10vw;
+        height: 55vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    div.company {
+        display: block;
+        height: 30vh;
+    }
+
+    div.bks {
+        top: 0;
+    }
+
+    div.perceptus {
+        top: 30vh;
+    }
+
+    div.seven {
+        top: 60vh;
+    }
+
+
+    .companyLogo .circle {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .circle i {
+        font-size: 50px;
+    }
+
+    .company .text {
+        position: absolute;
+        top: 0;
+        left: 2%;
+        width: 40%;
+    }
+
+    .text h1 {
+        font-size: 25px;
+    }
+
+    .text h2 {
+        font-size: 18px;
+    }
+
+    .text.right {
+        left: 58%;
+    }
+
+    .text .date,
+    .text span {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    section.socials {
+        top: 290vh;
+
+    }
+
+
+
+
+}
+
+/* iPad Pro - portrait */
+
+@media (min-width:1024px) and (min-height:1366px) {
+
+    header i.fa-comment-dots {
+        left: 70%;
+    }
+
+    header div.welcomeMessage {
+        left: 50%;
+        width: 31%;
+        font-size: 30px;
+
+    }
+
+
+    main {
+        height: 250vh;
+    }
+
+    div.title {
+        top: 5%;
+        height: 10vh;
+    }
+
+    div.title h2 {
+        font-size: 40px;
+    }
+
+    div.title i {
+
+        font-size: 80px;
+    }
+
+    div.title span.spnLineLeft,
+    div.title span.spnLineRight {
+        position: absolute;
+        top: 90px;
+        width: 120px;
+    }
+
+    section.myWorks {
+
+        height: 60vh;
+        width: 100%;
+
+    }
+
+
+    .myWorks div.projects {
+        width: 90%;
+        height: 40vh;
+    }
+
+    div.projects div.project {
+
+        height: 30vh;
+    }
+
+
+    .showProject .devices {
+        position: absolute;
+        top: 5%;
+        left: 0;
+        width: 50%;
+        height: 90%;
+
+    }
+
+    .devices img.imac {
+        height: 40%;
+    }
+
+    .devices img.ipad {
+        top: 40%;
+        left: 35%;
+        height: 30%;
+    }
+
+
+    .devices img.iphone {
+        top: 50%;
+        height: 20%;
+        left: 55%;
+
+    }
+
+    .showProject .text {
+        top: 5%;
+        left: 50%;
+        width: 50%;
+        height: 90%;
+        padding: 30px;
+    }
+
+
+    section.skills {
+        top: 60vh;
+        height: 70vh;
+    }
+
+    .skills div.elements {
+        width: 90%;
+        height: 50vh;
+    }
+
+
+    div.element {
+        height: 40vh;
+    }
+
+    section.experience {
+        top: 130vh;
+        height: 90vh;
+    }
+
+    div.companies {
+        top: 20%;
+        height: 60vh;
+    }
+
+    .companies span.spanLine {
+        height: 40vh;
+    }
+
+    div.perceptus {
+        top: 20vh;
+    }
+
+    div.seven {
+        top: 40vh;
+    }
+
+    div.company {
+        height: 15vh;
+        overflow: hidden;
+    }
+
+    .companyLogo .circle {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .circle i {
+        font-size: 50px;
+    }
+
+    .company .text {
+
+        left: 2%;
+        width: 40%;
+    }
+
+    .text h1 {
+        font-size: 25px;
+    }
+
+    .text h2 {
+        font-size: 18px;
+    }
+
+    .text.right {
+        left: 58%;
+    }
+
+    section.socials {
+
+        top: 220vh;
+
+    }
+
+}
+
+/* Lenovo mi MIX2 */
+
+@media(min-width:1200px) and (max-height: 850px) {
+
+    header div.welcomeMessage {
+        width: 29%;
+        font-size: 35px;
+    }
+
+}
+
+
+/* Laptop HD */
+
+@media (min-width:1360px) and (max-height:850px) {
+    nav a {
+
+        font-size: 16px;
+
+    }
+
+    header i.fa-comment-dots {
+
+        top: 35%;
+        left: 30%;
+    }
+
+    header div.welcomeMessage {
+        left: 75%;
+    }
+
+    main {
+        height: 390vh;
+
+    }
+
+    div.title {
+        top: 5%;
+        height: 17vh;
+    }
+
+    div.title h2 {
+        font-size: 30px;
+    }
+
+    div.title i {
+
+        font-size: 60px;
+    }
+
+    div.title span.spnLineLeft,
+    div.title span.spnLineRight {
+        position: absolute;
+        top: 70px;
+        width: 90px;
+
+
+    }
+
+    section.myWorks {
+
+        height: 100vh;
+        width: 100%;
+    }
+
+
+    .myWorks div.projects {
+        top: 25%;
+        width: 70%;
+        margin: 0 auto;
+        height: 70vh;
+        justify-content: space-between;
+
+    }
+
+    div.projects div.project {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 30%;
+        height: 55vh;
+        overflow: hidden;
+    }
+
+
+    section.skills {
+        top: 100vh;
+        height: 100vh;
+
+    }
+
+    .skills div.elements {
+
+        width: 80%;
+        top: 27%;
+        height: 70vh;
+    }
+
+
+    div.element {
+        height: 60vh;
+    }
+
+    div.elementName i {
+        font-size: 60px;
+    }
+
+    div.elementName span {
+        font-size: 25px;
+    }
+
+
+    section.experience {
+        top: 200vh;
+        height: 160vh;
+    }
+
+    div.companies {
+
+        height: 120vh;
+    }
+
+    .companies span.spanLine {
+        top: 10vw;
+        height: 80vh;
+
+    }
+
+
+    div.company {
+        height: 40vh;
+    }
+
+    div.bks {
+        top: 0;
+    }
+
+    div.perceptus {
+        top: 40vh;
+    }
+
+    div.seven {
+        top: 80vh;
+    }
+
+    .circle i {
+        font-size: 60px;
+    }
+
+    .company .text {
+        left: 10%;
+        width: 30%;
+    }
+
+    .text h1 {
+        font-size: 25px;
+    }
+
+    .text h2 {
+        font-size: 18px;
+    }
+
+    .text.right {
+        left: 60%;
+    }
+
+    .text .date,
+    .text span {
+        font-size: 17px;
+    }
+
+    section.socials {
+
+        top: 360vh;
+
+    }
+
+
+
+}
+
+/* iPad Pro landscape */
+
+@media (min-width:1360px) and (min-height: 851px) {
+    nav a {
+        font-size: 14px;
+    }
+
+    header i.fa-comment-dots {
+
+        top: 35%;
+        left: 45%;
+    }
+
+    header div.welcomeMessage {
+        width: 30%;
+        font-size: 40px;
+    }
+
+    main {
+        height: 300vh;
+    }
+
+    .showProject .devices {
+        left: 5%;
+        width: 45%;
+        height: 80%;
+    }
+
+
+    .devices img.imac {
+        height: 85%;
+        top: 0;
+    }
+
+    .showProject .text {
+        left: 50%;
+        width: 45%;
+        padding: 60px;
+    }
+
+}
+
+/* Desktop FHD */
+
+@media (min-width:1367px) {
+
+    nav a {
+        font-size: 18px;
+    }
+
+    header div.welcomeMessage {
+        left: 75%;
+        width: 20%;
+        font-size: 35px;
+    }
+
+
+
+    header i.fa-comment-dots {
+
+        top: 35%;
+        left: 34%;
+    }
+
+    main {
+        height: 285vh;
+    }
+
+    div.title {
+        top: 5%;
+        height: 11vh;
+    }
+
+    div.title h2 {
+        font-size: 35px;
+    }
+
+    div.title i {
+
+        font-size: 65px;
+    }
+
+    div.title span.spnLineLeft,
+    div.title span.spnLineRight {
+        position: absolute;
+        top: 75px;
+        width: 100px;
+
+
+    }
+
+    section.myWorks {
+
+        height: 70vh;
+        width: 100%;
+    }
+
+
+    .myWorks div.projects {
+        top: 27%;
+        width: 70%;
+        margin: 0 auto;
+        height: 50vh;
+        justify-content: space-between;
+
+    }
+
+    div.projects div.project {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 25%;
+        height: 40vh;
+        overflow: hidden;
+    }
+
+
+    section.skills {
+        top: 70vh;
+        height: 70vh;
+    }
+
+    .skills div.elements {
+
+        width: 70%;
+        margin: 0 auto;
+        top: 25%;
+        height: 50vh;
+        justify-content: space-between;
+
+    }
+
+
+    div.element {
+        flex-basis: 30%;
+        height: 45vh;
+    }
+
+
+    section.experience {
+        top: 140vh;
+        height: 115vh;
+    }
+
+    div.companies {
+        top: 20%;
+        height: 91vh;
+
+    }
+
+    .companies span.spanLine {
+        top: 10vw;
+        height: 50vh;
+
+    }
+
+
+    div.company {
+        height: 30vh;
+
+    }
+
+
+    div.perceptus {
+        top: 30vh;
+    }
+
+    div.seven {
+        top: 60vh;
+    }
+
+
+    .circle i {
+        font-size: 80px;
+    }
+
+    .company .text {
+        position: absolute;
+        top: 0;
+        left: 20%;
+        width: 20%;
+    }
+
+
+    .text h1 {
+        font-size: 25px;
+    }
+
+    .text h2 {
+        font-size: 18px;
+    }
+
+    .text.right {
+        left: 60%;
+    }
+
+    .text .date,
+    .text span {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    section.socials {
+
+        top: 255vh;
+
+
+    }
+
+
+
+}
