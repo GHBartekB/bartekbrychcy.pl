@@ -60,7 +60,7 @@ const addLetter = () => {
             return;
         }
 
-        return setTimeout(() => {
+        return setTimeout(() => { 
             j = -15;
             spanText.textContent = "";
             addLetter()
