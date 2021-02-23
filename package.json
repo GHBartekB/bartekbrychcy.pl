@@ -4,7 +4,8 @@
   "description": "A fully personalised project with the use of some skills aforementioned in the “Project” section. The project is constantly developing and available on GitHub.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod": "webpack --config ./config/webpack.config.prod.js",
+    "dev": "webpack --config ./config/webpack.config.dev.js"
   },
   "repository": {
     "type": "git",
