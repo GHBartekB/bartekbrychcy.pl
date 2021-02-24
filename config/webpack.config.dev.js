@@ -9,6 +9,12 @@ module.exports = {
     output: {
         filename: 'js/dev.js',
         path: path.resolve(__dirname, '../', 'build'),
+        environment: {
+            arrowFunction: true,
+            const:true,
+            destructuring:true,
+            forOf: true,
+        }
     },
     devServer: {
         open: true,
