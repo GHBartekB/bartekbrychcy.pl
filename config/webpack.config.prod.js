@@ -8,7 +8,7 @@ module.exports = {
     mode: 'production',
     entry: './src/index.js',
     output: {
-        filename: '[name]-[contenthash:6].js',
+        filename: 'js/[name]-[contenthash:6].js',
         path: path.resolve(__dirname, '../', 'build'),
     },
     module: {

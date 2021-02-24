@@ -7,7 +7,7 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
-        filename: 'dev.js',
+        filename: 'js/dev.js',
         path: path.resolve(__dirname, '../', 'build'),
     },
     devServer: {
