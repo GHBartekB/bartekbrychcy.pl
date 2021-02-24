@@ -13,6 +13,19 @@ module.exports = {
     devServer: {
         open: true,
     },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use:[ 'style-loader', 'css-loader'],
+
+                test: /\.(scss|sass)$/,
+                use: ['style-loader', 'sass-loader']
+            },  
+
+        ]
+
+    },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
