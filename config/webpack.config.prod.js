@@ -8,7 +8,7 @@ module.exports = {
     mode: 'production',
     entry: './src/index.js',
     output: {
-        filename: 'main-[contenthash:6].js',
+        filename: '[name]-[contenthash:6].js',
         path: path.resolve(__dirname, '../', 'build'),
     },
     module: {
@@ -28,7 +28,7 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env'],
-                        plugins: ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-arrow-functions"]
+                        plugins: ["@babel/plugin-proposal-class-properties", ["@babel/plugin-transform-arrow-functions", {"spec":true}]]
                     }
                 }
             }
