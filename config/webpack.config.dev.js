@@ -7,6 +7,9 @@ module.exports = {
     output: {
         filename: 'dev.js',
         path: path.resolve(__dirname, '../', 'build'),
+    },
+    devServer: {
+        open: true,
     }
 
 
