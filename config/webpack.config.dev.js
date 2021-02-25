@@ -15,7 +15,9 @@ module.exports = {
             destructuring:true,
             forOf: true,
         }
+        
     },
+    target: ['web', 'es5'],
     devServer: {
         open: true,
     },

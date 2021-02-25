@@ -37,6 +37,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1"
+    "@babel/polyfill": "^7.12.1",
+    "copy-webpack-plugin": "^7.0.0"
   }
 }
