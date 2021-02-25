@@ -20,6 +20,7 @@ module.exports = {
     target: ['web', 'es5'],
     devServer: {
         open: true,
+        contentBase: path.resolve(__dirname, '../', 'old-page/assets')
     },
     module: {
         rules: [
